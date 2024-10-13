@@ -13,12 +13,12 @@ import { getExamples } from "./examples";
 const router = Router();
 
 /**
- * Define the base URL for the API versioning.
+ * Define the base URL for API versioning.
  */
 const baseURL = `/api/v${configuration.API_VERSION}`;
 
 /**
- * Redirect from the root endpoint to the base API URL.
+ * Redirects from the root endpoint to the base API URL.
  * This route handles GET requests to the root ("/") and redirects them to the base URL.
  *
  * @param req - The HTTP request object.
@@ -33,12 +33,16 @@ router.get("/", (req: Request, res: Response) => {
  * Define the GET route for the base API URL.
  * This route handles GET requests to the base URL and executes the getHome function.
  *
- * @param req - The HTTP request object.
- * @param res - The HTTP response object.
  * @returns A JSON response containing home data.
  */
 router.get(baseURL, getHome);
 
+/**
+ * Define the GET route for examples.
+ * This route handles GET requests to the examples URL and calls the getExamples function.
+ *
+ * @returns A JSON response containing example data.
+ */
 router.get(`${baseURL}/examples`, getExamples);
 
 /**
