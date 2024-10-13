@@ -13,7 +13,7 @@ This section informs users about which versions of the project are currently sup
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability within this project, please report it immediately by contacting us via email at [your-email@example.com].
+If you discover a security vulnerability within this project, please report it immediately by contacting us via email at [aquie00t@icloud.com].
 
 Here’s how to report vulnerabilities:
 
@@ -28,7 +28,7 @@ Please ensure that all vulnerability details are kept confidential until a fix h
 
 ## Security Updates
 
-We recommend keeping your version of the project up-to-date to ensure you receive the latest security updates. Check our [Releases](https://github.com/yourusername/yourrepository/releases) page for the latest updates.
+We recommend keeping your version of the project up-to-date to ensure you receive the latest security updates. Check our [Releases](https://github.com/aquie00tt/express-typescript-starter-kit/releases/) page for the latest updates.
 
 ## Acknowledgements
 
