@@ -30,6 +30,16 @@ export interface IErrorResponse extends IMessageResponse {
 	stack?: string;
 }
 
+/**
+ * Interface representing a data response, which extends IMessageResponse.
+ * This includes an additional data property to return requested data.
+ *
+ * @template T - The type of data being returned in the response.
+ */
 export interface IDataResponse<T> extends IMessageResponse {
+	/**
+	 * The data associated with the response.
+	 * This could be any type of data, depending on the context.
+	 */
 	data: T;
 }
