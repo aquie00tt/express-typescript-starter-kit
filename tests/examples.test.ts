@@ -12,7 +12,7 @@ describe("Example Routes", () => {
 		await disconnect();
 	});
 
-	test("should return all examples on GET - /api/v1/examples", async () => {
+	test("Should return all examples on GET - /api/v1/examples", async () => {
 		const response = await request(app).get(
 			"/api/v1/examples",
 		);
