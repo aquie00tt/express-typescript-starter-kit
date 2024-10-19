@@ -5,7 +5,6 @@ import {
 } from "express";
 import configuration from "../utils/configuration";
 import getHome from "./homes";
-import { getExamples } from "./examples";
 
 /**
  * Create a new Router instance.
@@ -36,15 +35,6 @@ router.get("/", (req: Request, res: Response) => {
  * @returns A JSON response containing home data.
  */
 router.get(baseURL, getHome);
-
-/**
- * Define the GET route for examples.
- * This route handles GET requests to the examples URL and calls the getExamples function.
- *
- * @returns A JSON response containing example data.
- */
-router.get(`${baseURL}/examples`, getExamples);
-
 /**
  * Export the router instance for use in other modules.
  */
