@@ -45,6 +45,13 @@ declare global {
 			 * Specifies which database in the MongoDB server the application will interact with.
 			 */
 			MONGO_DATABASE_NAME: string;
+
+			/**
+			 * The number of rounds for hashing the password using bcrypt.
+			 * This defines the cost factor for the hashing algorithm,
+			 * affecting the time taken to hash a password. Higher values increase security but also the time required.
+			 */
+			SALT_ROUNDS: string;
 		}
 	}
 }
