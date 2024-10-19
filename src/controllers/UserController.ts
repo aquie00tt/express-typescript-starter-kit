@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import UserModel, {
 	IUserDocument,
 } from "../database/models/UserModel"; // Import the user model and IUserDocument interface
@@ -54,5 +55,19 @@ export default class UserController {
 
 		// Return true if a document was deleted, otherwise return false
 		return result.deletedCount > 0;
+	}
+
+	public static async findUserById(
+		id: mongoose.Types.ObjectId,
+	): Promise<Omit<IUserDocument, "password"> | null> {
+		const user = await UserModel.findOne<IUserDocument>({
+			$or: [
+				{
+					_id: id,
+				},
+			],
+		}).select("-password");
+
+		return user;
 	}
 }

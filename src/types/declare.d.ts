@@ -1,3 +1,5 @@
+import type { Payload } from "./Payload";
+
 /**
  * Augmenting the global NodeJS namespace to include custom environment variable types.
  * This allows TypeScript to understand the structure of the process.env object.
@@ -52,14 +54,32 @@ declare global {
 			 * affecting the time taken to hash a password. Higher values increase security but also the time required.
 			 */
 			SALT_ROUNDS: string;
+
 			/**
-			 * JWT Secret Key
+			 * The secret key used for signing JWT tokens.
+			 * This is a critical value for token security and should be kept secret.
 			 */
 			SECRET_KEY: string;
+
 			/**
-			 * Jwt Access Token EXPIRES_IN
+			 * Defines the expiration time for JWT tokens.
+			 * Typically in a format such as '1h' (1 hour) or '7d' (7 days).
 			 */
 			EXPIRES_IN: string;
+		}
+	}
+
+	/**
+	 * Augmenting the Express namespace to include custom user data in the Request object.
+	 * This allows access to the authenticated user's payload within request handlers.
+	 */
+	namespace Express {
+		interface Request {
+			/**
+			 * The user payload extracted from the JWT token.
+			 * This will be available on the request object after authentication.
+			 */
+			user: Payload;
 		}
 	}
 }

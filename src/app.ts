@@ -48,9 +48,12 @@ app.use(express.urlencoded({ extended: true }));
  */
 app.use(
 	morgan(
-		configuration.NODE_ENV === "development"
-			? "dev"
-			: "combined",
+		configuration.NODE_ENV === "production"
+			? "combined"
+			: "dev",
+		{
+			skip: () => configuration.NODE_ENV === "test",
+		},
 	),
 );
 

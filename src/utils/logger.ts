@@ -1,10 +1,14 @@
 import winston from "winston";
+import configuration from "./configuration";
 
 /**
  * Create a logger instance using the Winston library.
- * This logger will output logs to the console.
+ * This logger will output logs to the console unless in test environment.
  */
 const logger = winston.createLogger({
+	// Disable logging in test environment
+	silent: configuration.NODE_ENV === "test",
+
 	/**
 	 * Define the transports for the logger.
 	 * Here, we are using the Console transport to log messages to the console.

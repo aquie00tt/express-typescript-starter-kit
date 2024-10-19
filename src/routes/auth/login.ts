@@ -62,6 +62,7 @@ export async function login(
 
 	// Generate a JWT access token for the authenticated user
 	const accessTokenResult = generateAccessToken({
+		id: user.id,
 		username: user.username,
 	});
 

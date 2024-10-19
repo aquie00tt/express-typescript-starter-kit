@@ -36,3 +36,26 @@ export function generateAccessToken(
 		expiresIn: configuration.EXPIRES_IN, // Expiration time for the token
 	};
 }
+
+/**
+ * Function to verify a JWT token.
+ * This function checks the validity of the token using the secret key and returns the decoded payload.
+ *
+ * @param token - The JWT access token string to be verified.
+ * @returns The decoded payload if the token is valid, otherwise null.
+ */
+export function verifyToken(token: string): Payload | null {
+	try {
+		// Verify the token using the secret key and decode the payload
+		const payload = jwt.verify(
+			token,
+			configuration.SECRET_KEY,
+		);
+
+		// Return the decoded payload casted to the Payload type
+		return payload as Payload;
+	} catch {
+		// Return null if token verification fails
+		return null;
+	}
+}
