@@ -57,9 +57,15 @@ export default class UserController {
 		return result.deletedCount > 0;
 	}
 
+	/**
+	 * Finds a user document by its ID.
+	 * @param id - The ID of the user to find.
+	 * @returns - Returns the found user document without the password field, or null if not found.
+	 */
 	public static async findUserById(
 		id: mongoose.Types.ObjectId,
 	): Promise<Omit<IUserDocument, "password"> | null> {
+		// Find the user document by ID and exclude the password from the result
 		const user = await UserModel.findOne<IUserDocument>({
 			$or: [
 				{
@@ -68,6 +74,6 @@ export default class UserController {
 			],
 		}).select("-password");
 
-		return user;
+		return user; // Return the found user document without the password
 	}
 }
