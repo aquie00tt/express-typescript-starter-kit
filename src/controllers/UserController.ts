@@ -14,7 +14,11 @@ export default class UserController {
 	): Promise<IUserDocument | null> {
 		// Find the user document in the database by username
 		const user = await UserModel.findOne<IUserDocument>({
-			username, // The username to search for
+			$or: [
+				{
+					username,
+				},
+			],
 		});
 
 		return user; // Return the found user or null
