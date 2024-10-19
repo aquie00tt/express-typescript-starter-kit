@@ -6,10 +6,8 @@ This section informs users about which versions of the project are currently sup
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 1.1.x   | :white_check_mark: |
 | 1.0.x   | :white_check_mark: |
-| 0.9.x   | :x:                |
-| 0.8.x   | :white_check_mark: |
-| < 0.8   | :x:                |
 
 ## Reporting a Vulnerability
 
