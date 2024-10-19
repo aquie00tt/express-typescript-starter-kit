@@ -43,3 +43,8 @@ export interface IDataResponse<T> extends IMessageResponse {
 	 */
 	data: T;
 }
+
+export interface ITokenResponse extends IMessageResponse {
+	access_token: string;
+	expires_in: number;
+}

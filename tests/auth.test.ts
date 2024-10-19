@@ -38,4 +38,14 @@ describe("Auth Routes", () => {
 		expect(response.statusCode).toBe(201);
 		expect(response.body).toBeDefined();
 	});
+
+	test("POST - /api/v1/auth/login", async () => {
+		const response = await request(app)
+			.post("/api/v1/auth/login")
+			.send(testUser);
+
+		expect(response.statusCode).toBe(201);
+		expect(response.body.access_token).toBeDefined();
+		expect(response.body.expires_in).toBeDefined();
+	});
 });

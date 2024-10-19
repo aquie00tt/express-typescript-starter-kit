@@ -32,6 +32,8 @@ jobs:
           MONGO_CONNECTION_URI: mongodb://localhost:27017/
           MONGO_DATABASE_NAME: test-db
           SALT_ROUNDS: 10 # Example value
+          SECRET_KEY: asdas # Example Value
+          EXPIRES_IN: 3600000 # Example Value
         run: npm test
 
   build:

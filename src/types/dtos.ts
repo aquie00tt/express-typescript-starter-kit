@@ -6,3 +6,5 @@ import { IUser } from "../database/models/UserModel";
  * that is required for the registration process.
  */
 export type RegisterDTO = IUser;
+
+export type LoginDTO = IUser;

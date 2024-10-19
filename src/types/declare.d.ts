@@ -52,6 +52,14 @@ declare global {
 			 * affecting the time taken to hash a password. Higher values increase security but also the time required.
 			 */
 			SALT_ROUNDS: string;
+			/**
+			 * JWT Secret Key
+			 */
+			SECRET_KEY: string;
+			/**
+			 * Jwt Access Token EXPIRES_IN
+			 */
+			EXPIRES_IN: string;
 		}
 	}
 }

@@ -1,11 +1,12 @@
 import {
-	type Request, // Import the Request type from express for type annotations
-	type Response, // Import the Response type from express for type annotations
-	Router, // Import the Router function from express to create route handlers
+	type Request, // Type for the HTTP request object from Express
+	type Response, // Type for the HTTP response object from Express
+	Router, // Function from Express used to create routers
 } from "express";
 import configuration from "../utils/configuration"; // Import the configuration utility for API versioning
 import getHome from "./homes"; // Import the getHome function to handle the home route
 import register from "./auth/register"; // Import the register function to handle user registration
+import { login } from "./auth/login"; // Import the login function to handle user login
 
 /**
  * Create a new Router instance for defining API routes.
@@ -48,6 +49,12 @@ router.get(baseURL, getHome); // Handle GET requests to the base URL
  * This route handles POST requests to the authentication URL for user registration.
  */
 router.post(`${authURL}/register`, register); // Handle user registration
+
+/**
+ * Define the POST route for user login.
+ * This route handles POST requests to the authentication URL for user login.
+ */
+router.post(`${authURL}/login`, login); // Handle user login
 
 /**
  * Export the router instance for use in other modules.

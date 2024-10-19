@@ -1,5 +1,8 @@
 import { Document, Schema, model } from "mongoose"; // Import necessary modules from mongoose
-import { hashPassword } from "../../utils/password"; // Import the password hashing utility
+import {
+	comparePassword,
+	hashPassword,
+} from "../../utils/password"; // Import the password hashing utility
 
 export interface IUser {
 	username: string; // The username of the user
@@ -9,7 +12,20 @@ export interface IUser {
 /**
  * Interface that represents the User document in MongoDB, extending the Document interface.
  */
-export interface IUserDocument extends Document, IUser {}
+export interface IUserDocument extends Document, IUser {
+	/**
+	 * Compares a plaintext password with a hashed password.
+	 * This function is used to verify user credentials during login.
+	 *
+	 * @param password - The plaintext password provided by the user.
+	 * @param hashedPassword - The hashed password stored in the database.
+	 * @returns A promise that resolves to a boolean indicating whether the passwords match.
+	 */
+	comparePassword: (
+		password: string,
+		hashedPassword: string,
+	) => Promise<boolean>;
+}
 
 /**
  * Schema for the User document, defining the structure and validation rules for user data.
@@ -29,16 +45,16 @@ const userSchema = new Schema<IUserDocument>({
 		unique: true, // Validation rule for uniqueness
 		minlength: [
 			2,
-			"Username must be at least 2 characters long.", // Validation error message
-		],
+			"Username must be at least 2 characters long.",
+		], // Validation error message
 		maxlength: [
 			100,
-			"Username cannot exceed 100 characters.", // Validation error message
-		],
+			"Username cannot exceed 100 characters.",
+		], // Validation error message
 		match: [
-			/^[a-zA-Z0-9]+$/, // Regex pattern to allow only alphanumeric characters
-			"Username can only contain alphanumeric characters.", // Validation error message
-		],
+			/^[a-zA-Z0-9]+$/,
+			"Username can only contain alphanumeric characters.",
+		], // Validation for alphanumeric characters
 	},
 
 	/**
@@ -52,12 +68,12 @@ const userSchema = new Schema<IUserDocument>({
 		required: [true, "Password is required"], // Validation rule for required field
 		minlength: [
 			8,
-			"Password must be at least 8 characters long.", // Validation error message
-		],
+			"Password must be at least 8 characters long.",
+		], // Validation error message
 		maxlength: [
 			200,
-			"Password cannot exceed 200 characters.", // Validation error message
-		],
+			"Password cannot exceed 200 characters.",
+		], // Validation error message
 	},
 });
 
@@ -75,12 +91,13 @@ userSchema.pre<IUserDocument>(
 		const hashedPassword = await hashPassword(
 			this.password,
 		);
-
 		this.password = hashedPassword; // Set the hashed password
-
 		next(); // Call the next middleware
 	},
 );
+
+// Add the comparePassword method to the user schema
+userSchema.methods.comparePassword = comparePassword;
 
 /**
  * User model to interact with the 'users' collection in MongoDB.
