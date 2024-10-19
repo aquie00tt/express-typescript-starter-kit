@@ -7,4 +7,9 @@ import { IUser } from "../database/models/UserModel";
  */
 export type RegisterDTO = IUser;
 
+/**
+ * Data Transfer Object (DTO) for user login.
+ * This type represents the structure of user data
+ * that is required for the login process.
+ */
 export type LoginDTO = IUser;
