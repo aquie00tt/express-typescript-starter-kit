@@ -27,6 +27,13 @@ app.use(
 );
 
 /**
+ * Set the 'trust proxy' setting to 'loopback'.
+ * This allows the application to trust the loopback address (localhost) when determining the client's IP.
+ * This is useful for rate limiting and other IP-based functionalities.
+ */
+app.set("trust proxy", "loopback");
+
+/**
  * Set security-related HTTP headers using Helmet.
  * This helps protect the app from well-known vulnerabilities.
  */
