@@ -15,7 +15,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/aquie00tt/blog-api.git"
+		"url": "git+https://github.com/aquie00tt/express-typescript-starter-kit.git"
 	},
 	"author": "İrfan Sönmezışıklı",
 	"license": "MIT",
@@ -24,9 +24,9 @@
 		"rest-api"
 	],
 	"bugs": {
-		"url": "https://github.com/aquie00tt/blog-api/issues"
+		"url": "https://github.com/aquie00tt/express-typescript-starter-kit/issues"
 	},
-	"homepage": "https://github.com/aquie00tt/blog-api#readme",
+	"homepage": "https://github.com/aquie00tt/express-typescript-starter-kit#readme",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"cors": "^2.8.5",
