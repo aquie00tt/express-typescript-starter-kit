@@ -1,8 +1,5 @@
 {
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"prettier.requireConfig": true,
-	"editor.wordWrap": "off",
-	"editor.fontSize": 18,
-	"editor.fontFamily": "Cascadia Code"
+	"prettier.requireConfig": true
 }
