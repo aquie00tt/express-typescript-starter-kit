@@ -1,6 +1,6 @@
 import { type Request, type Response } from "express";
 import HomeController from "../controllers/HomeController";
-import { IMessageResponse } from "../types/response";
+import type { IMessageResponse } from "../types/response";
 
 /**
  * Handle GET requests for the home route.

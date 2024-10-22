@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import UserModel, {
 	IUserDocument,
 } from "../database/models/UserModel"; // Import the user model and IUserDocument interface
-import { RegisterDTO } from "../types/dtos"; // Import RegisterDTO for user registration data
+import type { RegisterDTO } from "../types/dtos"; // Import RegisterDTO for user registration data
 
 export default class UserController {
 	/**

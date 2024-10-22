@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken"; // Import the JSON Web Token (JWT) library for token generation
-import { Payload } from "../types/Payload"; // Import the Payload type for typing the token's payload
+import type { Payload } from "../types/Payload"; // Import the Payload type for typing the token's payload
 import configuration from "./configuration"; // Import configuration for secret key and token expiration settings
 
 /**

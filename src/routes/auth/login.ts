@@ -3,11 +3,11 @@ import type {
 	Response, // Type for the HTTP response object from Express
 	NextFunction, // Type for the middleware next function from Express
 } from "express";
-import { LoginDTO } from "../../types/dtos"; // Import the Login Data Transfer Object type
+import type { LoginDTO } from "../../types/dtos"; // Import the Login Data Transfer Object type
 import BadRequestError from "../../errors/BadRequestError"; // Import custom BadRequestError for error handling
 import UserController from "../../controllers/UserController"; // Import UserController to manage user-related operations
 import { generateAccessToken } from "../../utils/jsonwebtoken"; // Import utility to generate JWT access tokens
-import { ITokenResponse } from "../../types/response"; // Import the ITokenResponse type for defining the structure of token responses
+import type { ITokenResponse } from "../../types/response"; // Import the ITokenResponse type for defining the structure of token responses
 
 /**
  * Handle user login functionality.

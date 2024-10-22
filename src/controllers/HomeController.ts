@@ -1,4 +1,4 @@
-import { IMessageResponse } from "../types/response";
+import type { IMessageResponse } from "../types/response";
 
 /**
  * HomeController is responsible for handling home-related operations.

@@ -1,4 +1,4 @@
-import { IUser } from "../database/models/UserModel";
+import type { IUser } from "../database/models/UserModel";
 
 /**
  * Data Transfer Object (DTO) for user registration.

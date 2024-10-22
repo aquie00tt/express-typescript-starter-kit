@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import BaseError from "../errors/BaseError";
 import configuration from "../utils/configuration";
-import {
+import type {
 	IErrorResponse,
 	IMessageResponse,
 } from "../types/response";

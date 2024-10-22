@@ -3,10 +3,10 @@ import type {
 	Response,
 	NextFunction,
 } from "express"; // Import Request, Response, and NextFunction types from Express
-import { RegisterDTO } from "../../types/dtos"; // Import RegisterDTO for user registration data
+import type { RegisterDTO } from "../../types/dtos"; // Import RegisterDTO for user registration data
 import BadRequestError from "../../errors/BadRequestError"; // Import BadRequestError class for error handling
 import UserController from "../../controllers/UserController"; // Import UserController for user operations
-import { IMessageResponse } from "../../types/response"; // Import IMessageResponse for message response type
+import type { IMessageResponse } from "../../types/response"; // Import IMessageResponse for message response type
 import ServerFailedError from "../../errors/ServerFailedError"; // Import ServerFailedError class for server errors
 import mongoose from "mongoose"; // Import Mongoose
 

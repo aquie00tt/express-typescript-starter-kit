@@ -5,8 +5,8 @@ import type {
 } from "express"; // Importing necessary types from Express framework.
 import UserController from "../controllers/UserController"; // Importing the UserController to handle user-related operations.
 import NotFoundError from "../errors/NotFoundError"; // Importing a custom error class for handling not found errors.
-import { IDataResponse } from "../types/response"; // Importing the response interface for standardized responses.
-import { IUserDocument } from "../database/models/UserModel"; // Importing the user document interface to define the structure of user data.
+import type { IDataResponse } from "../types/response"; // Importing the response interface for standardized responses.
+import type { IUserDocument } from "../database/models/UserModel"; // Importing the user document interface to define the structure of user data.
 
 /**
  * Middleware function to retrieve and return the profile information of the authenticated user.
