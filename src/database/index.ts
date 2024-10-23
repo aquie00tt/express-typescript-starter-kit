@@ -15,7 +15,7 @@ export async function connect(
 ): Promise<boolean> {
 	try {
 		logger.info(
-			`Attempting to connect to MongoDB at ${uri}...`,
+			`Attempting to connect to MongoDB at ${dbName}...`,
 		); // Log the attempt to connect
 		await mongoose.connect(uri, {
 			dbName,
