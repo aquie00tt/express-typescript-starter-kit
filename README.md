@@ -11,6 +11,7 @@ This is a starter kit for building APIs with **Express** and **TypeScript**. It 
 - **Helmet** for securing HTTP headers
 - **Morgan** for logging HTTP requests
 - **Error handling** with custom error classes
+- **Docker** support for containerized application deployment
 
 ## Prerequisites
 
@@ -40,7 +41,7 @@ This is a starter kit for building APIs with **Express** and **TypeScript**. It 
 4. Create a .env file by copying the .env.sample:
 
    ```bash
-   cp .env.sample .env.production #  development & test
+   cp .env.sample .env.(production | development | test)
    ```
 
 5. Update the .env file with your configuration settings.
