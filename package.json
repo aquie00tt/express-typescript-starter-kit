@@ -38,7 +38,7 @@
 		"jsonwebtoken": "^9.0.2",
 		"mongoose": "^8.8.1",
 		"morgan": "^1.10.0",
-		"winston": "^3.15.0"
+		"winston": "^3.17.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.14.0",
